@@ -1,0 +1,23 @@
+/* Footer.css */
+.footer {
+    background-color: #26425a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .contact-info {
+    margin-bottom: 20px;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+  }
+  
+  .copyright {
+    font-size: 12px;
+    text-align: center;
+    margin-left: -60px;
+  }
+  

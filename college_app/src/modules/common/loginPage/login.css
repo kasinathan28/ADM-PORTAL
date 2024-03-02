@@ -1,0 +1,74 @@
+.loginPageMain{
+  display: flex;
+}
+.loginPageMain .banner{
+  width: 400px;
+  justify-content: center;
+  height: 400px;
+  margin: auto;
+}
+.loginPageMain .banner img{
+  width: 600px;
+  height: 400px;
+  margin: auto;
+}
+
+.login-container {
+  width: 600px;
+  margin: 150px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-container .avatar {
+  width: 100%;
+  margin: auto;
+  height: 200px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.login-container .avatar img {
+  width: 100px;
+  height: 100px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}

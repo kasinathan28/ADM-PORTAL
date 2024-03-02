@@ -1,0 +1,117 @@
+.addStudent-form {
+  background: #555;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.addStudent-form h1 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.addStudent-form .form-group {
+  margin-bottom: 15px;
+}
+
+.addStudent-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.addStudent-form input[type="text"],
+.addStudent-form input[type="email"],
+.addStudent-form input[type="password"],
+.addStudent-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.addStudent-form button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 30px auto 10px auto;
+}
+
+.addStudent-form button:hover {
+  background-color: #45a049;
+}
+
+.studentsList {
+  margin-top: 20px;
+}
+
+.students-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.students-table th,
+.students-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.students-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.students-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.students-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+.popup-content1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  justify-content: center;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.popup-content1 h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.popup-content1 ul {
+  padding-left: 20px;
+}
+
+.popup-content1 button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-content1 button:hover {
+  background-color: #45a049;
+}

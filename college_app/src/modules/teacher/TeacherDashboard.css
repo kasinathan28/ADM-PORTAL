@@ -1,0 +1,43 @@
+.teacherDashboard {
+    display: flex;
+    margin-top: 100px;
+  }
+  
+  .sidebar {
+    min-width: 300px;
+    background-color: #22395c;
+    color: #ecf0f1;
+    position: fixed;
+    padding: 20px;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sidebar button:hover {
+    background-color: #ddd;
+  }
+  
+  .content {
+    flex-grow: 1;
+    margin-left: 300px;
+    padding: 20px;
+  }
+  

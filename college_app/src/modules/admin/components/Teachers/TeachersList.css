@@ -1,0 +1,95 @@
+.newTeacherCard-container {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  background: #555;
+}
+
+.newTeacherCard-container h1 {
+  color: #fff;
+  padding: 20px;
+}
+
+.newTeacher-card {
+  padding: 20px;
+}
+
+.newTeacher-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newTeacher-card .form-group {
+  margin-bottom: 15px;
+}
+
+.newTeacher-card .form-group label {
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.newTeacher-card .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.newTeacher-card button {
+  width: 20%;
+  float: right;
+  margin-left: auto;
+  margin-right: 30px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.newTeacher-card button:hover {
+  background-color: #0056b3;
+}
+
+.teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.teacher-table th,
+.teacher-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.teacher-table th {
+  background-color: #f2f2f2;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  margin-right: 10px;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.filter-select option {
+  padding: 8px 12px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+}

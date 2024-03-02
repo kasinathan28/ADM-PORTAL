@@ -1,0 +1,74 @@
+.addAdmin-form {
+  background: #555;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.addAdmin-form h1 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.addAdmin-form .form-group {
+  margin-bottom: 15px;
+}
+
+.addAdmin-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.addAdmin-form input[type="text"],
+.addAdmin-form input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.addAdmin-form button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addAdmin-form button:hover {
+  background-color: #45a049;
+}
+
+.adminList .container {
+  margin: 20px;
+}
+
+.adminList table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.adminList th {
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.adminList td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.adminList tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.adminList tr:hover {
+  background-color: #ddd;
+}
