@@ -87,35 +87,37 @@ function TeacherProfile({ id }) {
           <div className="text-center">
             {editMode ? (
               <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label className="label" htmlFor="username">
-                    Username
-                  </label>
-                  <div className="input-container">
-                    <input
-                      type="text"
-                      id="username"
-                      name="thrUsername"
-                      defaultValue={editedProfileData.thrUsername}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label className="label" htmlFor="password">
-                    Password
-                  </label>
-                  <div className="input-container">
-                    <input
-                      type="password"
-                      id="password"
-                      name="thrPassword"
-                      defaultValue={editedProfileData.thrPassword}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
                 <div className="row">
+                  <div className="col">
+                    <div className="form-group">
+                      <label className="label" htmlFor="username">
+                        Username
+                      </label>
+                      <div className="input-container">
+                        <input
+                          type="text"
+                          id="username"
+                          name="thrUsername"
+                          defaultValue={editedProfileData.thrUsername}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label className="label" htmlFor="password">
+                        Password
+                      </label>
+                      <div className="input-container">
+                        <input
+                          type="password"
+                          id="password"
+                          name="thrPassword"
+                          defaultValue={editedProfileData.thrPassword}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
                   <div className="col">
                     <div className="form-group">
                       <label className="label" htmlFor="email">
@@ -148,13 +150,13 @@ function TeacherProfile({ id }) {
                   </div>
                   <div className="col">
                     <div className="form-group">
-                      <label className="label" htmlFor="phone">
+                      <label className="label" htmlFor="aadhar">
                         Aadhar No
                       </label>
                       <div className="input-container">
                         <input
-                          type="tel"
-                          id="phone"
+                          type="text"
+                          id="aadhar"
                           name="thrAadhar"
                           defaultValue={editedProfileData.thrAadhar}
                           onChange={handleChange}
@@ -191,14 +193,16 @@ function TeacherProfile({ id }) {
                 </div>
               </form>
             ) : (
-              <div>
-                <p>
-                  <strong>Username:</strong> {profileData.thrUsername}
-                </p>
-                <p>
-                  <strong>Password:</strong> {profileData.thrPassword}
-                </p>
+              <div className='profile'>
                 <div className="row">
+                  <div className="col">
+                    <p>
+                      <strong>Username:</strong> {profileData.thrUsername}
+                    </p>
+                    <p>
+                      <strong>Password:</strong> {profileData.thrPassword}
+                    </p>
+                  </div>
                   <div className="col">
                     <p>
                       <strong>Email:</strong> {profileData.thrEmail}
