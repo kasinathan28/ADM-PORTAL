@@ -93,7 +93,7 @@ function Certificates() {
 
   return (
     <>
-      <div className="card">
+      <div className="Addcard">
         <div className="plus-sign">
           <button className='button' onClick={handleAddCertificateClick}>+</button>
         </div>
@@ -101,9 +101,9 @@ function Certificates() {
       </div>
 
       {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <span className="close" onClick={handleClosePopup}>&times;</span>
+        <div className={`popup ${showPopup ? 'active' : ''}`}>
+  <div className={`popup-content ${showPopup ? 'active' : ''}`}>
+  <span className="close" onClick={handleClosePopup}>&times;</span>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label className="label" htmlFor="certificateName">
