@@ -13,7 +13,7 @@ function TeacherDashboard() {
 
   const navigate = useNavigate();
 
-  
+
   const handleLogout = () => {
     // Implement your logout logic here, such as clearing local storage, etc.
     console.log("Logging out...");
