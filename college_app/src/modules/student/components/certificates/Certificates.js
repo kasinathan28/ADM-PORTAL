@@ -121,25 +121,61 @@ function Certificates() {
                     <option value="NCC">NCC</option>
                     <option value="NSS">NSS</option>
                     <option value="Sports and games">SPorts and games</option>
-                    <option value="Social Service Activities">Social Service Activities</option>
+                    <option value="Social Service Activities">
+                      Social Service Activities
+                    </option>
                     <option value="Arts competition">Arts competition</option>
                     <option value="Online course">Online course</option>
-                    <option value="Membership in student professional societies">Membership in student professional societies</option>
-                    <option value="Competition conducted by professional bodies">Competition conducted by professional bodies</option>
-                    <option value="Attending full time Conference/Seminar/Exihibition/Workshop">Attending full time Conference/Seminar/Exihibition/Workshop</option>
-                    <option value="Poster presentation">Poster presentation</option>
-                    <option value="Coordinaters of workshop">Coordinaters of workshop</option>
-                    <option value="Industrial training/Visit/Internship/Problem solving">Industrial training/Visit/Internship/Problem solving</option>
-                    <option value="Student Professional societies">Student Professional societies</option>
-                    <option value="College Association chapters ">College Association chapters </option>
-                    <option value="Elected student Representatives">Elected student Representatives</option>
-                    <option value="Participation in IEDC activities"> Participation in IEDC activities</option>
-                    <option value="Winning price in competitions">Winning price in competitions</option>
+                    <option value="Membership in student professional societies">
+                      Membership in student professional societies
+                    </option>
+                    <option value="Competition conducted by professional bodies">
+                      Competition conducted by professional bodies
+                    </option>
+                    <option value="Attending full time Conference/Seminar/Exihibition/Workshop">
+                      Attending full time
+                      Conference/Seminar/Exihibition/Workshop
+                    </option>
+                    <option value="Poster presentation">
+                      Poster presentation
+                    </option>
+                    <option value="Coordinaters of workshop">
+                      Coordinaters of workshop
+                    </option>
+                    <option value="Industrial training/Visit/Internship/Problem solving">
+                      Industrial training/Visit/Internship/Problem solving
+                    </option>
+                    <option value="Student Professional societies">
+                      Student Professional societies
+                    </option>
+                    <option value="College Association chapters ">
+                      College Association chapters{" "}
+                    </option>
+                    <option value="Elected student Representatives">
+                      Elected student Representatives
+                    </option>
+                    <option value="Participation in IEDC activities">
+                      {" "}
+                      Participation in IEDC activities
+                    </option>
+                    <option value="Winning price in competitions">
+                      Winning price in competitions
+                    </option>
                     <option value="Hackathon">Arts competition</option>
-                    <option value="Appreciation Certificate for Innovative suggestion to improve traditional skills">Appreciation Certificate for Innovative suggestion to improve traditional skills</option>
-                    <option value="Award for product developed">Arts competition</option>
-                    <option value="Innovative technologies developed and used by industries/users">Innovative technologies developed and used by industries/users</option>
-                    <option value="Got venture capital funding for innovative ideas">Got venture capital funding for innovative ideas</option>
+                    <option value="Appreciation Certificate for Innovative suggestion to improve traditional skills">
+                      Appreciation Certificate for Innovative suggestion to
+                      improve traditional skills
+                    </option>
+                    <option value="Award for product developed">
+                      Arts competition
+                    </option>
+                    <option value="Innovative technologies developed and used by industries/users">
+                      Innovative technologies developed and used by
+                      industries/users
+                    </option>
+                    <option value="Got venture capital funding for innovative ideas">
+                      Got venture capital funding for innovative ideas
+                    </option>
                   </select>
                 </div>
               </div>
@@ -184,15 +220,17 @@ function Certificates() {
           studentData.map((certificate, index) => (
             <div key={index} className="certificate-card">
               <h2>{certificate.certificateName}</h2>
-              <a
-                href={`http://localhost:5000/${certificate.certificateUrl}`}
-                download
-              >
-                Download
-              </a>
               <div className="certificate-details">
                 <p>Grade: {certificate.grade}</p>
-              </div>
+              <button>
+                <a
+                  href={`http://localhost:5000/${certificate.certificateUrl}`}
+                  download
+                >
+                  Download
+                </a>
+              </button>
+                </div>
             </div>
           ))
         ) : (
