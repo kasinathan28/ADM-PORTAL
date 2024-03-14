@@ -10,6 +10,19 @@ function TeacherDashboard() {
   const { id } = useParams();
   const [selectedOption, setSelectedOption] = useState(null);
 
+
+  const navigate = useNavigate();
+
+  
+  const handleLogout = () => {
+    // Implement your logout logic here, such as clearing local storage, etc.
+    console.log("Logging out...");
+    // For demonstration purposes, let's navigate to the login page
+    navigate('/'); // Update the route to your actual login route
+  };
+
+
+
   // Render the page contents bassed on the switch case
   const renderContent = () => {
     switch (selectedOption) {
@@ -43,10 +56,8 @@ function TeacherDashboard() {
               <button onClick={() => setSelectedOption('students')}>STUDENTS</button>
             </li>
             <li>
-              <button onClick={() => setSelectedOption('options')}>OPTIONS</button>
+              <button onClick={handleLogout}>Logout</button>
             </li>
-
-           
           </ul>
         </div>
         <div className="content">
