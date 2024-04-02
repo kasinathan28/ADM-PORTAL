@@ -41,12 +41,7 @@ function TeacherDashboard() {
             </li>
             <li>
               <button onClick={() => setSelectedOption('students')}>STUDENTS</button>
-            </li>
-            <li>
-              <button onClick={() => setSelectedOption('options')}>OPTIONS</button>
-            </li>
-
-           
+            </li>           
           </ul>
         </div>
         <div className="content">
