@@ -237,6 +237,9 @@ function StudentProfile({ id }) {
                     <p>
                       <strong>Semester:</strong> {profileData.stdSem}
                     </p>
+                    <p>
+                      <strong>Activity Point:</strong> {profileData.ActivityPoints}
+                    </p>
                   </div>
                 </div>
                 <button

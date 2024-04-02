@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { useParams } from 'react-router-dom';
 import Navbar from '../../../components/navbar/Navbar';
 import './AdmDashboard.css';
@@ -12,6 +14,8 @@ function AdmDashboard() {
   const { id } = useParams();
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const navigate = useNavigate();
+  
   const renderContent = () => {
     switch (selectedOption) {
       case 'profile':
@@ -32,6 +36,15 @@ function AdmDashboard() {
     }
   };
 
+
+  const handleLogout = () => {
+    // Implement your logout logic here, such as clearing local storage, etc.
+    console.log("Logging out...");
+    // For demonstration purposes, let's navigate to the login page
+    navigate('/'); // Update the route to your actual login route
+  };
+
+
   return (
     <div>
       <Navbar />
@@ -49,6 +62,9 @@ function AdmDashboard() {
             </li>
             <li>
               <button onClick={() => setSelectedOption('students')}>STUDENTS</button>
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </div>

@@ -1,4 +1,5 @@
 const StudentModel = require("../Models/StudentModel");
+const axios = require("axios");
 
 // Student Login
 exports.stdLogin = async (req, res) => {
@@ -20,13 +21,18 @@ exports.stdLogin = async (req, res) => {
   }
 };
 
-
-
 //   Add new student
 exports.addStudent = async (req, res) => {
   try {
-    const { stdName, stdEmail, stdPassword, stdPhoneNumber, regNo, stdDept, stdSem } =
-      req.body;
+    const {
+      stdName,
+      stdEmail,
+      stdPassword,
+      stdPhoneNumber,
+      regNo,
+      stdDept,
+      stdSem,
+    } = req.body;
 
     console.log("new Student request body = ", req.body);
     const existingStudent = await StudentModel.findOne({
@@ -59,7 +65,6 @@ exports.addStudent = async (req, res) => {
   }
 };
 
-
 // Get all students
 exports.getStudents = async (req, res) => {
   try {
@@ -72,20 +77,16 @@ exports.getStudents = async (req, res) => {
   }
 };
 
-
 // Delete a student
-exports.deletStd = async (req, res) =>{
-  const {id} = req.params;
+exports.deletStd = async (req, res) => {
+  const { id } = req.params;
   try {
     const student = await StudentModel.findByIdAndDelete(id);
     res.status(200).json(student);
   } catch (error) {
     console.log("error while deleting the student", error);
   }
-}
-
-
-
+};
 
 // get the details of a particular student
 exports.getStudent = async (req, res) => {
@@ -152,24 +153,19 @@ exports.updateStudent = async (req, res) => {
   }
 };
 
-
-
-
 // get certification details of a particular
-exports.getCertificates = async(req,res)=>{
+exports.getCertificates = async (req, res) => {
   console.log(req.params);
- const {id} = req.params
- console.log(id);
- const student = await StudentModel.findById(id)
- try{
-   res.status(200).json(student.certificates)
-   console.log(student.certificates);
- }
- catch(err){
-  res.status(404).json(err)
- }
-}
-
+  const { id } = req.params;
+  console.log(id);
+  const student = await StudentModel.findById(id);
+  try {
+    res.status(200).json(student.certificates);
+    console.log(student.certificates);
+  } catch (err) {
+    res.status(404).json(err);
+  }
+};
 
 // Add certificate
 exports.addCertificates = async (req, res) => {
@@ -179,19 +175,22 @@ exports.addCertificates = async (req, res) => {
     if (!student) {
       return res.status(404).json({ error: "Student not found" });
     }
-    console.log(req.body);
+
     const { grade, certificateName } = req.body;
-    const certificateFile = req.file; 
+    const certificateFile = req.file;
 
     const certificate = {
       grade: grade,
       certificateName: certificateName,
-      certificateUrl: certificateFile.path, 
+      certificateUrl: certificateFile.path,
     };
 
     student.certificates.push(certificate);
 
     await student.save();
+
+    // Call calculateActivityPoints to update activity points
+    await axios.get(`http://localhost:5000/calculate/${req.params.id}`);
 
     res.status(200).json({ message: "Certificate uploaded successfully" });
   } catch (error) {
@@ -213,18 +212,18 @@ exports.calculateActivityPoints = async (req, res) => {
 
     let activityPoints = 0;
 
-    student.certificates.forEach(certificate => {
+    student.certificates.forEach((certificate) => {
       switch (certificate.grade.toUpperCase()) {
-        case 'A':
+        case "A":
           activityPoints += 10;
           break;
-        case 'B':
+        case "B":
           activityPoints += 9;
           break;
-        case 'C':
+        case "C":
           activityPoints += 8;
           break;
-        case 'D':
+        case "D":
           activityPoints += 7;
           break;
         default:
@@ -242,6 +241,3 @@ exports.calculateActivityPoints = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
-
-

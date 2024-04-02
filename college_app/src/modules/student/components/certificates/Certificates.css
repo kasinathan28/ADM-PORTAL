@@ -1,4 +1,3 @@
-/* Styles for the Addcard component */
 .Addcard {
   width: 300px;
   height: 150px;
@@ -8,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -29,11 +29,13 @@
   color: #333;
 }
 
-/* Styles for the certificate card */
+
 .certificate-container{
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
+
 .certificate-card {
   width: 300px;
   background-color: #ffffff;
@@ -43,6 +45,17 @@
   margin: 20px;
 }
 
+.certificate-container button{
+  padding: 10px;
+  background: #aeb9ca;
+  border-radius: 20px;
+  border: none;
+}
+
+.certificate-container a{
+  text-decoration: none;
+}
+
 .certificate-card h2 {
   font-size: 18px;
   margin-bottom: 10px;
@@ -50,6 +63,9 @@
 
 .certificate-details {
   margin-top: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .certificate-details p {
@@ -73,7 +89,7 @@
   background-color: #0056b3;
 }
 
-/* Styles for the popup */
+
 .popup {
   display: block;
   position: fixed;
@@ -83,12 +99,12 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Add transition for opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .popup.active {
-  opacity: 1; /* Show popup when active */
+  opacity: 1;
 }
 
 .popup-content {
@@ -99,12 +115,12 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Add transition for opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .popup.active .popup-content {
-  opacity: 1; /* Show content when active */
+  opacity: 1;
 }
 
 .close {

@@ -1,22 +1,32 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import './StudentDashboard.css';
-import Navbar from '../../components/navbar/Navbar';
-import StudentProfile from './components/studentprofile/StudentProfile';
-import Certificates from './components/certificates/Certificates';
+import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import "./StudentDashboard.css";
+import Navbar from "../../components/navbar/Navbar";
+import StudentProfile from "./components/studentprofile/StudentProfile";
+import Certificates from "./components/certificates/Certificates";
 
 function StudentDashboard() {
   const { id } = useParams();
   console.log(id);
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Implement your logout logic here, such as clearing local storage, etc.
+    console.log("Logging out...");
+    // For demonstration purposes, let's navigate to the login page
+    navigate('/'); // Update the route to your actual login route
+  };
+
   const renderContent = () => {
     switch (selectedOption) {
-      case 'profile':
+      case "profile":
         return <StudentProfile id={id} />;
-      case 'certificates':
-        return <Certificates id = {id}/> ;
-    
+      case "certificates":
+        return <Certificates id={id} />;
+
       default:
         return <div>Select an option to view content</div>;
     }
@@ -29,16 +39,21 @@ function StudentDashboard() {
         <div className="sidebar">
           <ul>
             <li>
-              <button onClick={() => setSelectedOption('profile')}>MY PROFILE</button>
+              <button onClick={() => setSelectedOption("profile")}>
+                MY PROFILE
+              </button>
             </li>
             <li>
-              <button onClick={() => setSelectedOption('certificates')}>CERTIFICATES</button>
+              <button onClick={() => setSelectedOption("certificates")}>
+                CERTIFICATES
+              </button>
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </div>
-        <div className="content">
-          {renderContent()}
-        </div>
+        <div className="content">{renderContent()}</div>
       </div>
     </div>
   );

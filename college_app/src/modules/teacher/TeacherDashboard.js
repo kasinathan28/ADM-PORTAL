@@ -10,7 +10,20 @@ function TeacherDashboard() {
   const { id } = useParams();
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // Render the page contents bassed on the switch case
+
+  const navigate = useNavigate();
+
+
+  const handleLogout = () => {
+    
+    console.log("Logging out...");
+    
+    navigate('/'); 
+  };
+
+
+
+  
   const renderContent = () => {
     switch (selectedOption) {
       case 'profile':
@@ -18,7 +31,7 @@ function TeacherDashboard() {
       case 'students':
         return <Students/> ;
       case 'teachers':
-        // return <TeachersList/>;
+        
     
       default:
         return <div className='admigifcontainer'>
@@ -41,7 +54,7 @@ function TeacherDashboard() {
             </li>
             <li>
               <button onClick={() => setSelectedOption('students')}>STUDENTS</button>
-            </li>           
+              </li>
           </ul>
         </div>
         <div className="content">
