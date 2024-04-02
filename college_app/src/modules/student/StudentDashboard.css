@@ -41,3 +41,8 @@
     padding: 20px;
   }
   
+
+  #logout {
+    background: rgb(223, 43, 43);
+    cursor: pointer;
+  }

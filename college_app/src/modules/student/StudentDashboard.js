@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom';
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./StudentDashboard.css";
 import Navbar from "../../components/navbar/Navbar";
 import StudentProfile from "./components/studentprofile/StudentProfile";
 import Certificates from "./components/certificates/Certificates";
+import welcomeImage from "../../assets/student-img.png";
 
 function StudentDashboard() {
   const { id } = useParams();
@@ -14,10 +14,8 @@ function StudentDashboard() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Implement your logout logic here, such as clearing local storage, etc.
     console.log("Logging out...");
-    // For demonstration purposes, let's navigate to the login page
-    navigate('/'); // Update the route to your actual login route
+    navigate("/"); // Navigate to the login page
   };
 
   const renderContent = () => {
@@ -26,9 +24,24 @@ function StudentDashboard() {
         return <StudentProfile id={id} />;
       case "certificates":
         return <Certificates id={id} />;
-
       default:
-        return <div>Select an option to view content</div>;
+        // Display the welcome image by default
+        return (
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              margin: "auto",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection:"column"
+            }}
+          >
+
+            <img src={welcomeImage} alt="Welcome" />
+            <h2>Student Dashboard</h2>
+          </div>
+        );
     }
   };
 
@@ -49,7 +62,9 @@ function StudentDashboard() {
               </button>
             </li>
             <li>
-              <button onClick={handleLogout}>Logout</button>
+              <button onClick={handleLogout} id="logout">
+                Logout
+              </button>
             </li>
           </ul>
         </div>
